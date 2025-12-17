@@ -23,7 +23,7 @@ class TestKnapsack(unittest.TestCase):
         exp = 15.0
         self.assertTrue(abs(opt_val - exp) < 1e-6, f"Expected {exp}, got {opt_val}")
 
-        for (r, x, y) in model.P:
+        for (r, x, y) in model.Placements:
             if pyo.value(model.place[r, x, y]) > 0.5:
                 print(f"Place {r} at (x={x}, y={y})")
 
@@ -52,7 +52,7 @@ class TestKnapsack(unittest.TestCase):
         exp = 10.0
         self.assertTrue(abs(opt_val - exp) < 1e-6, f"Expected {exp}, got {opt_val}")
 
-        for (r, x, y) in model.P:
+        for (r, x, y) in model.Placements:
             if pyo.value(model.place[r, x, y]) > 0.5:
                 print(f"Place {r} at (x={x}, y={y})")
 
@@ -82,6 +82,6 @@ class TestKnapsack(unittest.TestCase):
         exp = 11.0
         self.assertTrue(abs(opt_val - exp) < 1e-6, f"Expected {exp}, got {opt_val}")
 
-        for (r, x, y) in model.P:
+        for (r, x, y) in model.Placements:
             if pyo.value(model.place[r, x, y]) > 0.5:
                 print(f"Place {r} at (x={x}, y={y})")
